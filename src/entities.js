@@ -17,8 +17,18 @@ const JournalEntry = new EntitySchema({
   properties: {
     id: { type: 'number', primary: true, autoincrement: true },
     description: { type: 'string' },
-    account_debit: { type: 'string' },
-    account_credit: { type: 'string' },
+    account_debit: {
+      kind: 'm:1',
+      entity: 'Account',
+      fieldName: 'account_debit',
+      referenceColumnName: 'name',
+    },
+    account_credit: {
+      kind: 'm:1',
+      entity: 'Account',
+      fieldName: 'account_credit',
+      referenceColumnName: 'name',
+    },
     amount: { type: 'number' },
     date: { type: 'string' },
   },

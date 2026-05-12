@@ -1,0 +1,27 @@
+'use strict';
+
+const { EntitySchema } = require('@mikro-orm/core');
+
+const Account = new EntitySchema({
+  name: 'Account',
+  tableName: 'accounts',
+  properties: {
+    name: { type: 'string', primary: true },
+    type: { type: 'string' },
+  },
+});
+
+const JournalEntry = new EntitySchema({
+  name: 'JournalEntry',
+  tableName: 'journal_entries',
+  properties: {
+    id: { type: 'number', primary: true, autoincrement: true },
+    description: { type: 'string' },
+    account_debit: { type: 'string' },
+    account_credit: { type: 'string' },
+    amount: { type: 'number' },
+    date: { type: 'string' },
+  },
+});
+
+module.exports = { Account, JournalEntry };

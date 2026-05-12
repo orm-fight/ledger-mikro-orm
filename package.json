@@ -1,0 +1,17 @@
+{
+  "name": "ledger-mikro-orm",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Minimal double-entry ledger on top of MikroORM (EntitySchema, no decorators) over SQLite. Mirrors the Wikipedia Double-entry bookkeeping Transaction Example.",
+  "main": "src/store.js",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "@mikro-orm/core": "^6.4.0",
+    "@mikro-orm/sqlite": "^6.4.0"
+  }
+}
